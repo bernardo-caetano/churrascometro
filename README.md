@@ -1,0 +1,1 @@
+Projeto que calcula a quantidade de carne, cerveja e bebidas para um churrasco, baseado no número de crianças, adultos e tempo de evento.
