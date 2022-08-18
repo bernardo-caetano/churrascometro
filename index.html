@@ -4,21 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Churrascômetro</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="icon" href="./assets/img/ico.png">
 </head>
 <body>
-
-    <div class="container">
-        <h1 id="title">Churrascômetro</h1>
-        <input id="adultos" type="number" name="adultos" placeholder="Adultos">
-        <input id="criancas" type="number" name="criancas" placeholder="Crianças">
-        <input id="duracao" type="number" name="duracao" placeholder="Duração (h)">
-        <button onclick=main()>Calcular</button>
-        <div id="resultado">
-
+    
+    <header class="d-flex flex-wrap justify-content-center py-2 mb-4 border-bottom bg-warning bg-gradient">
+        <div class="container">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <img src="./assets/img/logo-ico.png" style="width: 60px;">
+            <span class="fs-2 fw-bold text-dark ms-3">Churrascômetro</span>
+            </a>
         </div>
+    </header>
+
+    <div class="module shadow container mx-auto  p-5 rounded text-center" style="background-color: #ff3838;">
+        <h1 class="mb-4 text-center border-dark text-light" >Churrascômetro</h1>
+        <form>
+            <div class="mb-3">
+                <input id="adultos" class="form-control border-dark" type="number" name="adultos" placeholder="Adultos">
+            </div>
+            
+            <div class="mb-3">
+                <input id="criancas" class="form-control border-dark" type="number" name="criancas" placeholder="Crianças">
+            </div>
+            
+            <div class="mb-3">
+                <input id="duracao" class="form-control border-dark" type="number" name="duracao" placeholder="Duração (h)">
+            </div>
+            
+            <button onclick = main() type="button" class="btn btn-primary  w-75">Calcular</button>
+            <div id="resultado"></div>
+        </form>
     </div>
 
-    <script src="./script.js"></script>
+    <footer class="bg-warning bg-gradient fixed-bottom d-flex flex-wrap justify-content-start align-items-end border-top border-decondary py-2 mt-5 ">
+        
+        <div class="ms-2 col-md-4 d-flex align-items-center ">
+          <a href="/" class="mb-2 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <img src="./assets/img/logo-ico.png" style="width: 24px">
+          </a>
+          <span class="mb-2 mb-md-0 text-muted">© 2022 Churrascômetro, Inc</span>
+        </div>
+      </footer>
+
+    <script src="./assets/script/script.js"></script>
+    <script src="./assets/script/bootstrap.bundle.min.js"></script>
 </body>
 </html>

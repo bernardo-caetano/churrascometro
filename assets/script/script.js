@@ -9,6 +9,17 @@ let cr = document.getElementById("criancas")
 let du = document.getElementById("duracao")
 let resultado = document.getElementById("resultado")
 
+function verifier(){
+    if (ad.value < 0 || cr.value<0 || du.value<0){
+        alert("Digite um número maior que zero!")
+        ad.value = ''
+        cr.value = ''
+        du.value = ''
+        resultado.innerHTML = ''
+        return false
+    }else{return true}
+}
+
 function calc(){
     let adultos = ad.value;
     let criancas = cr.value;
@@ -20,7 +31,6 @@ function calc(){
 
     let calculado=[totalCarne,totalCerveja,totalBebidas]
     return calculado
-
 }
 
 function qtdeCarne(duracao){
@@ -51,14 +61,15 @@ function qtdeBebida(duracao){
 }
 
 function main(){
-    
-    let calculado = calc()
-    let carne = calculado[0]
-    let cerveja = calculado[1]
-    let bebidas = calculado[2]
+    if (verifier() == true){
+        let calculado = calc()
+        let carne = calculado[0]
+        let cerveja = calculado[1]
+        let bebidas = calculado[2]
 
-    resultado.innerHTML = `<p>Seu churrasco precisará de:</p>`
-    resultado.innerHTML += `<p class="itens">${Math.ceil(carne/1000)} Kg de carne.</p>`
-    resultado.innerHTML += `<p class="itens">${Math.ceil(cerveja/355)} latas de cerveja.</p>`
-    resultado.innerHTML += `<p class="itens">${Math.ceil(bebidas/2000)} pet 2l de bebidas.</p>`
+        resultado.innerHTML = `<p class="fs-5 text-light text-start mt-4 mb-2">Precisará de: </p>`
+        resultado.innerHTML += `<p class="fs-5 text-light text-start mb-2" >${Math.ceil(carne/1000)} Kg de carne.</p>`
+        resultado.innerHTML += `<p class="fs-5 text-light text-start mb-2" >${Math.ceil(cerveja/355)} latas de cerveja.</p>`
+        resultado.innerHTML += `<p class="fs-5 text-light text-start mb-2" >${Math.ceil(bebidas/2000)} pet 2l de bebidas.</p>`
+    }
 }
